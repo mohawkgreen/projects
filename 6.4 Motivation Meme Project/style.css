@@ -1,0 +1,25 @@
+#meme {
+    background-color: black;
+    border: 1px solid black; 
+    /* for some reason the sub div margin will not work without this border */
+}
+img {
+    width: 100%;
+    display: block;
+}
+#picture {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+    border: 5px solid white;
+}
+#setup {
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+#punchline {
+    color: white;
+    text-align: center;
+}
