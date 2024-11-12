@@ -1,0 +1,109 @@
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #44c496;
+    }
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-container {
+    display: flex;
+    align-items: space-between;
+    justify-content: space-evenly;
+}
+
+.heading{
+    text-align: center;
+    font-size: 5rem;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 80px;
+    color: #d2d0cd;
+}
+
+body {
+    background-color: #34353e;
+}
+
+.player-name {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #44c496;
+}
+
+.dice {
+    width: 200px;
+    height: 200px;
+    background-color: #930211;
+    border-radius: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.dot {
+    background-color: #fbefd4;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.left {
+    grid-column: 1 / 2;
+}
+
+.right {
+    grid-column: 3 / 4;
+}
+
+.top {
+    grid-row: 1 / 2;
+}
+
+.mid{
+    grid-row: 2 / 3;
+}
+
+.bot {
+    grid-row: 3 / 4;
+}
+
+.center {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    visibility: hidden;
+}
+
+.sour-gummy-400 {
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.dice-img {
+    width: 20px;
+    height: 20px;
+}
+
+.flag {
+    width: 60px;
+    height: 60px;
+    margin-left: 50px;
+    visibility: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
