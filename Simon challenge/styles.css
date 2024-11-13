@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: darkslateblue;
+    align-items: center;
+    justify-content: center;
+}
+
+.keypad {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.key {
+    border-radius: 10%;
+    border-color: black;
+    border: .7rem solid;
+    height: 200px;
+    width: 200px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    color: lightgoldenrodyellow;
+}
+
+.pixelify-sans-400 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
