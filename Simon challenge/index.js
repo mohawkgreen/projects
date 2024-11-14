@@ -7,12 +7,13 @@ var tones = [tone1, tone2, tone3, tone4]
 
 $('h1').click(function () {
     if(!running) {
+        $('body').css('background-color', 'darkslateblue');
         running = true;
         animateStart();
         setTimeout(function () {
             var count = 1;
-                playRound(count);
-                count++;
+            playRounds(count);
+            count++;
         }, 3500);
     }    
 });
@@ -29,30 +30,34 @@ function animateStart() {
 }
 
 function playRound(count) {
-    while(running){
+    return new Promise(() => {
         sequence = generateSequence(count);
-
         sequence.forEach(function (number) {
             $('#' + number).fadeOut(function () {
                 tones[number - 1].play();
             }).fadeIn();
         });
-
         gatherInput(count, sequence);
+    });
+}
+
+async function playRounds (count) {
+    while(running) {
+        await playRound(count)
     }
 }
 
 function gatherInput(count, sequence) {
     var clickCount = 0;
     var maxClicks = count;
-    var userInput = '';
+    var userInput = 0;
     for (let i = 1; i < 5; i++) {
         $('#' + i).click(function () {
             clickCount++;
             var id = $(this).attr('id').replace('#', '')
             userInput = id;
-            if(userInput !== sequence[i - 1]) {
-                running = false;
+            if(userInput !== sequence[clickCount - 1]) {
+                gameOver();
             }
             if(clickCount === maxClicks) {
                 for (let j = 1; j < 5; j++) {
@@ -71,3 +76,8 @@ function generateSequence(sequenceLength) {
     return sequence;
 }
 
+function gameOver() {
+    running = false;
+    $('body').css("background-color", "#EB3549");
+    $('h1').text('Game Over!');
+}
