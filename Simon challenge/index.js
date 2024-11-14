@@ -29,6 +29,7 @@ function animateStart() {
 
 function playRound(count, sequence) {
     return new Promise((resolve) => {
+        $('h1').text('Round ' + count);
         sequence.push(Math.floor(Math.random() * 4) + 1);
         animateSequenceNumbers(sequence, function() {
             gatherInput(count, sequence, resolve);
