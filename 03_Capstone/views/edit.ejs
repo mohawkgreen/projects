@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="/" class="nav-link text-white">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/post" class="nav-link text-white">
+        Post
+      </a>
+    </li>
+    <li>
+      <a href="/edit" class="nav-link active">
+        Edit
+      </a>
+    </li>
+  </ul>
+</div>
+
+<% if (postArray.length > 0) { %>
+  <div class="d-flex flex-column container">
+    <% postArray.forEach(function(item, index) { %>
+      <form action="/edit" method="POST">
+        <div class="mt-5 me-5 d-flex flex-column">
+          <textarea class="form-control" rows="1" type="text" name="postName"><%= item.postName %></textarea>
+          <textarea class="form-control my-3" rows="4" type="text" name="postEntry"><%= item.postEntry %></textarea>
+          <input class="form-control" type="text" name="index" value=<%= index %> hidden/>
+          <button type="submit" class="btn btn-primary btn-sm align-self-end" style="width: 80px;">Edit</button>
+        </div>
+      </form>
+      <form class="align-self-end me-5 mt-2" action="/delete" method="POST">
+        <input class="form-control" type="text" name="index" value=<%= index %> hidden/>
+        <button type="submit" class="btn btn-secondary btn-sm" style="width: 80px;">Delete</button>
+      </form>
+    <% }); %>
+  </div>
+<% } %>
+</div>
+
+<%- include("partials/footer.ejs", {
+    currentYear: currentYear,
+}) %>
+

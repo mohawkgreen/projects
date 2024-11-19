@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="/" class="nav-link text-white">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/post" class="nav-link active">
+        Post
+      </a>
+    </li>
+    <li>
+      <a href="/edit" class="nav-link text-white">
+        Edit
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="d-flex flex-column container">
+      <form action="/submit" method="POST">
+        <div class="mt-5 me-5 d-flex flex-column">
+          <textarea class="form-control" rows="1" type="text" name="postName" placeholder="Post Title"></textarea>
+          <textarea class="form-control my-3" rows="4" type="text" name="postEntry" placeholder="Post Entry"></textarea>
+          <button type="submit" class="btn btn-primary btn-sm align-self-end" style="width: 80px;">Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<%- include("partials/footer.ejs", {
+    currentYear: currentYear,
+}) %>

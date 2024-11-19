@@ -1,9 +1,47 @@
 <%- include("partials/header.ejs") %>
 
-<h1>John Kinsey</h1>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="/" class="nav-link active" aria-current="page">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/post" class="nav-link text-white">
+        Post
+      </a>
+    </li>
+    <li>
+      <a href="/edit" class="nav-link text-white">
+        Edit
+      </a>
+    </li>
+  </ul>
+</div>
 
-<p>Welcome to my home page!</p>
+  <% if (postArray.length > 0) { %>
+    <div class="d-flex flex-column container">
+      <% postArray.forEach(function(item, index) { %>
+        <% if (index < postArray.length - 1) { %>
+          <div class="mt-5 me-5 container-fluid border-bottom">
+            <h2 class="text-primary" ><%= item.postName %></h2>
+            <p class="ms-5 text-primary-emphasis"><%= item.postEntry %></p>
+          </div>
+        <% } else { %>
+          <div class="mt-5 me-5 container-fluid">
+            <h2 class="text-primary" ><%= item.postName %></h2>
+            <p class="ms-5 text-primary-emphasis"><%= item.postEntry %></p>
+          </div>
+        <% } %>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <h1 class="m-5 p-5">It's empty in here</h1>
+  <% } %>
+
+  </div>
 
 <%- include("partials/footer.ejs", {
     currentYear: currentYear,
 }) %>
+
